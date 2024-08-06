@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" creating blue print """
+""" the module  app """
 from flask import Flask
 from models import storage
 from api.v1.views import app_views
@@ -12,6 +12,7 @@ app.register_blueprint(app_views)
 
 @app.teardown_appcontext
 def teardown_db(exception):
+    """ this method access the storage then closed aafter opperatins """
     storage.close()
 
 

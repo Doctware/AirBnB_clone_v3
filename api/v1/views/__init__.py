@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" creating blue print """
+""" creating blue print for easy routing """
 from flask import Blueprint
 from api.v1.views.index import *
 
