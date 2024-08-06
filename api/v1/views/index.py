@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ the module index"""
-from api.v1.views import app_views
+from api.v1.views import app_view 
 from flask import jsonify
 from models import storage
 from models.amenity import Amenity
