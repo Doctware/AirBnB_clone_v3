@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-""" the module index"""
-from api.v1.views import app_view 
+"""The module index"""
 from flask import jsonify
+from . import app_views
 from models import storage
 from models.amenity import Amenity
 from models.city import City
@@ -10,22 +10,20 @@ from models.review import Review
 from models.state import State
 from models.user import User
 
-
 @app_views.route('/status', methods=['GET'])
 def get_status():
-    """ this method get the response status """
+    """This method gets the response status"""
     return jsonify({"status": "OK"})
 
-
-@app_views.route("/stats", methods=['GET'])
+@app_views.route('/stats', methods=['GET'])
 def stats():
-    """this end point retrieves each number of oobject by type """
+    """This endpoint retrieves the number of objects by type"""
     stats = {
-            storage.count(Amenity),
-            storage.count(City),
-            storage.count(Place),
-            storrage.counnt(Review),
-            storage.count(State),
-            storage.count(User)
+        'amenities': storage.count(Amenity),
+        'cities': storage.count(City),
+        'places': storage.count(Place),
+        'reviews': storage.count(Review),
+        'states': storage.count(State),
+        'users': storage.count(User)
     }
     return jsonify(stats)
