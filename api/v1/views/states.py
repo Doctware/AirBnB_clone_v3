@@ -12,7 +12,7 @@ def get_states():
     return jsonify([state.to_dict() for state in states])
 
 
-@app_views.route('/states/<state_id>', methoods=['GET'])
+@app_views.route('/states/<state_id>', methods=['GET'])
 def get_state(state_id):
     """ retrives state obj """
     state = storge.get(State, state_id)
@@ -32,7 +32,7 @@ def delete_state(state_id):
     return jsonify({}), 200
 
 
-@app_view.route('/states', methods=['POST'])
+@app_views.route('/states', methods=['POST'])
 def create_state():
     """ this method create new state """
     if not request.json:
