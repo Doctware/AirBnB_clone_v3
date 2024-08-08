@@ -10,7 +10,7 @@ from models import storage
 def get_states():
     """ this mehods retrives list of all state obj """
     states = storage.all(State).values()
-    return jsonify({"states": [state.to_dict() for state in states]})
+    return jsonify([state.to_dict() for state in states])
 
 
 @app_views.route('/states/<state_id>', methods=['GET'], strict_slashes=False)
