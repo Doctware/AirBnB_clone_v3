@@ -10,7 +10,7 @@ from api.v1.views import app_views
 def get_users():
     """ this methods get all users obj """
     users = storage.all(User)
-    return jsonify([users.to_dict() for user in users.vailues()])
+    return jsonify([users.to_dict() for user in users.values()])
 
 
 @app_views.route('/users/<user_id>', methods=['GET'])
