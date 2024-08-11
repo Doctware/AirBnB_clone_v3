@@ -6,7 +6,7 @@ from models import storage
 from api.v1.views import app_views
 
 
-@app_views.route('/users', methods=['GET'], strict_slashes=False)
+@app_views.route('/users', methods=['GET'])
 def get_users():
     """ this methods get all users obj """
     users = storage.all(User)
