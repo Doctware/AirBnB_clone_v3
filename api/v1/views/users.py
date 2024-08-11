@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ this module parfomes RESTfull action on USERS """
 from flask import request, abort, jsonify
-from models.users import User
+from models.user import User
 from models import storage
 from api.v1.views import app_views
 
